@@ -17,8 +17,8 @@ class Game{
             return "Invalid Name...Please enter string only"
         }
         let gameBoard = new Board
-        let player1 = new Player("X",player1Name)
-        let player2 = new Player("0",player2Name)
+        let player1 = new Player(player1Name,"X")
+        let player2 = new Player(player2Name,"0")
 
         return new Game(gameBoard,[player1,player2])
     }
@@ -55,9 +55,9 @@ class Game{
             return "Game ended as Draw";
         }
         if (symbolOfWinner == this.players[0].symbol) {
-            return this.players[0].name + " is the winner";
+            return this.players[0].name + " is the winner and player symbol is " + this.players[0].symbol;
         } else if (symbolOfWinner == this.players[1].symbol) {
-            return this.players[1].name + " is the winner";
+            return this.players[1].name + " is the winner and player symbol is " + this.players[1].symbol;
         }
         return "Game Ended";
     }
